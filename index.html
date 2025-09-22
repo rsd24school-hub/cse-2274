@@ -1,38 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="utf-8" />
-    <title> My First web dev project (school) </title>
-    <style>
-        h1 {
-            font-size: 60px;
-            background-color: grey;
-            color: Dodgerblue;
-        }
-        h2 {
-            font-size: 60px;
-            background-color: grey;
-            color: rgb(30, 255, 124);
-        }
-        p {
-            font-family: 'Trebuchet MS', Arial, sans-serif;
-            font-size: 24px;
-        }
-        body {
-            background-color: beige;
-            font-family: 'Trebuchet MS', Arial, sans-serif;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>The tech repairer Rashdan</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Rashdan shows and describes the equipment he uses for his repairs">
 </head>
-
 <body>
-    <h1> Hi I am a computer science student </h1>
-    <h2> my name is Rashdan </h2>
-    <ul>
-        <li> my hobbies include photography, coding, researching </li>
-        <li> I like to repair tech and advocate for right to repair</li>
-    </ul>
+    <div id="header"></div>
+    <main>
+        <p>Types of pillars and columns</p>
+        <p>Second</p>
+    </main>
+    <div id="footer"></div>
+    <script>
+        async function loadHTML(id, file) {
+            const element = document.getElementById(id);
+            const response = await fetch(file);
+            element.innerHTML = await response.text();
+        }
+        
+        loadHTML("header", "header.html");
+        
+    </script>
 </body>
-
 </html>

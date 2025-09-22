@@ -1,0 +1,26 @@
+
+ <style>
+        h1 {
+            font-size: 60px;
+            background-color: grey;
+            color: Dodgerblue;
+        }
+        h2 {
+            font-size: 40px;
+            background-color: rgb(78, 16, 58);
+            color: rgb(30, 255, 124);
+        }
+        h5 {
+            font-size: 30px;
+            background-color: rgb(167, 85, 85);
+            color: rgb(30, 255, 124);
+        }
+        p {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            font-size: 24px;
+        }
+        body {
+            background-color: beige;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+        }
+    </style>
