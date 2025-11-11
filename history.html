@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>History - Rashdan</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="history-page">
+    <header id="header"></header>
+<div class="herohistory">
+        <div class="title">
+        <h1>History of Pillars and Columns</h1>
+        </div>
+    </div>
+    <main>
+        <p>This page explores the history of architectural pillars and columns, from ancient Greek Doric, Ionic, and Corinthian styles to Roman Tuscan and Composite orders.</p>
+
+        <section>
+            <h2>Doric</h2>
+            <p>The Doric column is the most simple and oldest Greek order, featuring a stout, unadorned circular capital and resting directly on the floor without a base.</p>
+        </section>
+
+        <section>
+            <h2>Ionic</h2>
+            <p>The Ionic column is recognizable by the volutes (scrolls) on its capital. Ionic columns are generally thinner and fluted compared to the Doric.</p>
+        </section>
+
+        <section>
+            <h2>Corinthian</h2>
+            <p>The Corinthian column is the most ornate of the Greek orders. Its capital is elaborately decorated with acanthus leaves and scrolls.</p>
+        </section>
+
+        <section>
+            <h2>Tuscan</h2>
+            <p>The Tuscan column is a simpler Roman version of the Doric column, typically with a simple base and unadorned capital.</p>
+        </section>
+
+        <section>
+            <h2>Composite</h2>
+            <p>The Composite column is a Roman order that combines elements from other styles, blending Ionic volutes with Corinthian acanthus leaves.</p>
+        </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+        async function loadHTML(id, file) {
+            const element = document.getElementById(id);
+            const response = await fetch(file);
+            element.innerHTML = await response.text();
+        }
+
+        loadHTML("header", "header.html");
+        loadHTML("footer", "footer.html");
+    </script>
+</body>
+</html>

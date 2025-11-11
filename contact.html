@@ -3,37 +3,115 @@
 
 <head>
     <meta charset="utf-8" />
-    <title> web dev project by Rashdan</title>
-      <div id="header"></div>
-    <div id="footer"></div>
-    <script>
-        async function loadHTML(id, file) {
-            const element = document.getElementById(id);
-            const response = await fetch(file);
-            element.innerHTML = await response.text();
-        }
-        
-        loadHTML("header", "header.html");
-    
-    </script>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact — Rashdan | Web Development</title>
+    <meta name="description" content="Contact for web development inquiries, demos and suggestions." />
     <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <h2> Rashdan </h2>
-    <h3>About me</h3>
-    <ul>
-        <li> If you wanna contact me. Dont </li>
-        <li> If you really need to contact me - message first</li>
-        <li> I have a live <a href = "https://cse-2274-rashdan.netlify.app/">
-                website demo 
-        </a> where u can message me </li>
-        <li>i also have a  <a href = "https://github.com/rsd24school-hub">
-            Github
-        </a></li>
+    <header id="header"></header>
+    <script src="script.js"></script>
+    <div class="herocontact">
+        <div class="title">
+            <h1>Contact</h1>
+            <p style="font-size:18px; margin:0.5rem 0 1rem;">Get in touch for project enquiries, demos or collaboration.</p>
+        </div>
+    </div>
 
-    </ul>
-    
+    <main>
+        <section style="max-width:760px; margin:1.5rem auto; text-align:left; padding:0 1.5rem;">
+            <h2 style="color:#0a9396; margin-top:0;">Hello — I am "The Custodian" of this Virtual Museum </h2>
+            <p>
+                I build this Virtual Museum to showcase various architectural pillars and columns.
+                 and also to showcase my frontend development skills.
+                If you have a project or question, please use the form below or reach me via the links.
+            </p>
+
+            <p>
+                Live demo: <a href="https://cse-2274-rashdan.netlify.app/" target="_blank" rel="noopener noreferrer">https://cse-2274-rashdan.netlify.app/</a><br>
+                GitHub: <a href="https://github.com/rsd24school-hub" target="_blank" rel="noopener noreferrer">github.com/rsd24school-hub</a>
+            </p>
+            
+            <form action="https://formspree.io/f/meoryqvp" method="POST" class="contact-form" novalidate>
+                <div class="form-row">
+                    <label for="firstName">First name</label>
+                    <input id="firstName" name="firstName" type="text" required placeholder="First name">
+                </div>
+
+                <div class="form-row">
+                    <label for="lastName">Last name</label>
+                    <input id="lastName" name="lastName" type="text" required placeholder="Last name">
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required placeholder="you@example.com">
+                </div>
+
+                <div class="form-row">
+                    <label for="phone">Phone <span class="optional">(optional)</span></label>
+                    <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+44 7123 456789">
+                </div>
+
+                <div class="form-row">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project or question"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <label for="inquiry">Type of inquiry</label>
+                    <select id="inquiry" name="inquiry" required>
+                        <option value="">-- Select an option --</option>
+                        <option value="website-build">Website build</option>
+                        <option value="website-update">Website update</option>
+                        <option value="ui-ux">UI / UX design</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label>Preferred contact method</label>
+                    <div class="radio-group">
+                        <label class="radio"><input type="radio" name="preferredContact" value="email" checked> Email</label>
+                        <label class="radio"><input type="radio" name="preferredContact" value="phone"> Phone</label>
+                    </div>
+                </div>
+
+                <div class="form-row checkbox-row">
+                    <label class="checkbox"><input type="checkbox" name="subscribe" value="yes"> Subscribe to occasional project updates</label>
+                </div>
+
+                <div class="form-row checkbox-row">
+                    <label class="checkbox" for="consent">
+                        <input id="consent" name="consent" type="checkbox" value="agree" required>
+                        I acknowledge that by submitting this form I agree to receive a reply regarding this enquiry.
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <button type="submit" class="btn-primary">Send message</button>
+                </div>
+
+                <p style="font-size:0.9rem; color:#666; margin-top:0.5rem;">You will receive a reply to the contact method you selected.</p>
+            </form>
+        </section>
+    </main>
+
+    <footer id="footer"></footer>
+ 
+    <script>
+      
+            async function loadHTML(id, file) {
+                const element = document.getElementById(id);
+                const response = await fetch(file);
+                element.innerHTML = await response.text();
+            }
+
+            loadHTML("header", "header.html");
+            loadHTML("footer", "footer.html");
+        
+    </script>
 </body>
 
 </html>

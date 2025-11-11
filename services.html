@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Services - Rashdan</title>
+    <link rel="stylesheet" href="styles.css" />
+    
+</head>
+<body>
+    <header id="header"></header>
+<div class="heroservice">
+        <div class="title">
+            <h1>My Tech Repair Services</h1>
+        </div>
+    </div>
+    <main>
+        <h1>My Tech Repair Services</h1>
+        <p>I offer repair services for computers, laptops, and other electronic devices. 
+        I specialize in troubleshooting hardware issues, software installations, and optimizing performance. 
+        My goal is to help you get your devices running smoothly again.</p>
+        <li><strong>    Locations opening : </strong></li>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+        async function loadHTML(id, file) {
+            const element = document.getElementById(id);
+            const response = await fetch(file);
+            element.innerHTML = await response.text();
+        }
+
+        loadHTML("header", "header.html");
+        loadHTML("footer", "footer.html");
+    </script>
+</body>
+</html>
