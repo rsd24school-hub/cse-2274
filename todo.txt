@@ -1,0 +1,32 @@
+# TODO LIST
+# REQUIREMENTS
+
+## Pages
+- [x] Home page
+- [x] "About me" or "About this site" page
+- [x] Contact page with form
+- [x] Minimum of three pages with content
+
+## Semantic Markup
+- [x] H1 on every page
+- [x] main, section, nav where appropriate
+- [x] Form semantic markup
+
+## Header
+- [x] Logo with a word mark or symbol
+- [x] Working menu for all the pages
+- [x] Styled with hover and active states
+- [x] Header needs to be a container
+
+## Footer
+- [x] Styled container with copyright
+
+## Appearance
+- [x] Color theme
+- [x] Good readable typography and visual hierarchy
+
+## Responsive
+- [x] Fluid widths
+- [x] Breakpoints for tablet and phones
+- [x] Hamburger menu
+
