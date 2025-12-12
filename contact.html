@@ -99,19 +99,7 @@
     </main>
 
     <footer id="footer"></footer>
- 
-    <script>
-      
-            async function loadHTML(id, file) {
-                const element = document.getElementById(id);
-                const response = await fetch(file);
-                element.innerHTML = await response.text();
-            }
-
-            loadHTML("header", "header.html");
-            loadHTML("footer", "footer.html");
-        
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

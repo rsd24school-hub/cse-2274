@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine.js Components</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <h1>Alpine.js Interactive Components</h1>
+
+    <div class="container">
+        <h2>Accordion</h2>
+        <div x-data="{ open: false }" class="accordion">
+            <button @click="open = !open" class="accordion__button">
+                Toggle
+            </button>
+
+            <div x-show="open" class="accordion__panel">
+                <p>accordion toggle</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2> Tabs</h2>
+        <div x-data="{ tab: 'one' }" class="tabs">
+            <nav class="tabs__nav">
+                <button @click="tab = 'one'">Tab One</button>
+                <button @click="tab = 'two'">Tab Two</button>
+                <button @click="tab = 'three'">Tab Three</button>
+            </nav>
+
+            <div x-show="tab === 'one'" class="tabs__panel">
+                <p>If you are a current CT State student, your free account is already created. You should have received a link from the email sent by the CT State Career Services Center. Click the link to log in to Handshake and activate your account.</p>
+            </div>
+
+            <div x-show="tab === 'two'" class="tabs__panel">
+                <p>Filling out your profile includes many benefits! For example, you'll receive personalized job recommendations, proactive employer outreach, and the opportunity to showcase your skills and experience. </p>
+            </div>
+
+            <div x-show="tab === 'three'" class="tabs__panel">
+                <p>Remember, you have full control over who can access your profile. Handshake gives you the power to manage your privacy settings, ensuring that your information is secure and only visible to those you choose. To learn more about your privacy options,</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Modal Window</h2>
+        <div x-data="{ open: false }" class="modal">
+            <button @click="open = true" class="modal__button">
+                Open Modal
+            </button>
+
+            <div x-show="open" @click.away="open = false" class="modal__overlay">
+                <div class="modal__content">
+                    <button @click="open = false" class="modal__close"> Close </button>
+
+                    <h4>This is a Modal Title</h4>
+                    <p> Reasons to attend college include increased earning potential and job security, greater career opportunities, and personal development through new skills and independence. College can also lead to a more fulfilling career, provide networking opportunities, and offer a space for personal growth and exploration </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Image Gallery</h2>
+        <div x-data="{ selected: 'images/composite-1-gallary.jpg' }" class="gallery">
+            <div class="gallery__main">
+                <img :src="selected" alt="Main image">
+            </div>
+            <div class="gallery__thumbs">
+                <img src="images/composite-1-gallary.jpg" @click="selected = 'images/composite-1-gallary.jpg'" alt="Thumbnail 1">
+                <img src="images/doric-1-gallary.jpg" @click="selected = 'images/doric-1-gallary.jpg'" alt="Thumbnail 2">
+                <img src="images/tuscan-2-gallary.JPG" @click="selected = 'images/tuscan-2-gallary.JPG'" alt="Thumbnail 3">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

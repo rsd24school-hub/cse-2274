@@ -1,40 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
-    <title>Web Dev Project by Rashdan</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>About — Rashdan | Web Development</title>
+    <meta name="description" content="About page for Rashdan, a computer science student, showcasing hobbies and projects." />
     <link rel="stylesheet" href="styles.css" />
-    <div class="heroabout">
-        <div class="title">
-            <h1>About Me</h1>
-        </div>
 </head>
-
 <body>
     <header id="header"></header>
 
-    <h1>Hi I am a computer science student</h1>
-    <h2>My name is Rashdan</h2>
-    <h5>About me</h5>
-    <ul>
-        <li>My hobbies include photography, coding, researching</li>
-        <li>I like to repair tech and advocate for right to repair</li>
-        <li>I have a live <a href="https://cse-2274-rashdan.netlify.app/">website demo</a></li>
-        <li>I also have a <a href="https://github.com/rsd24school-hub">Github</a></li>
-    </ul>
+    <div class="heroabout">
+        <div class="title"><h1>About Me</h1></div>
+    </div>
 
-    
-    <script>
-        async function loadHTML(id, file) {
-            const element = document.getElementById(id);
-            const response = await fetch(file);
-            element.innerHTML = await response.text();
-        }
+    <main>
+        <section style="max-width:800px; margin:2rem auto; text-align:left; padding:0 1.5rem;">
+            
+            <h2 style="color: #0a9396; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; margin-top: 0;">Who I Am</h2>
+            <p style="font-size: 1.1rem; color: #555;">
+                Hi, I'm <strong>Rashdan</strong>, a passionate computer science student with a deep interest in the intersection of technology and history. 
+                I view code not just as a tool for function, but as a medium for preservation and storytelling.
+            </p>
 
-        loadHTML("header", "header.html");
-        loadHTML("footer", "footer.html");
-    </script>
+            <h2 style="color: #0a9396; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; margin-top: 2.5rem;">My Mission</h2>
+            <p>
+                As the "Custodian" of this virtual museum, my goal is to document and digitize architectural heritage. 
+                I believe in the <strong>Right to Repair</strong>—both for our physical devices and our digital history. 
+                By building accessible, robust web experiences, I aim to keep knowledge open and enduring.
+            </p>
+            
+            <div style="background: #f9f9f9; padding: 1.5rem; border-left: 4px solid #0a9396; margin: 2rem 0; border-radius: 0 4px 4px 0;">
+                <h3 style="margin-top: 0;">Beyond the Code</h3>
+                <ul style="margin-bottom: 0;">
+                    <li>📷 <strong>Photography:</strong> Capturing the details that others might miss.</li>
+                    <li>🔍 <strong>Research:</strong> Digging into the archives to find the stories behind the structures.</li>
+                    <li>🔧 <strong>Hardware Repair:</strong> Giving new life to old tech.</li>
+                </ul>
+            </div>
+
+            <h2 style="color: #0a9396; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; margin-top: 2.5rem;">Our Toolset</h2>
+            <p>The technologies powering this virtual experience:</p>
+            <ul class="flex-demo" style="justify-content: flex-start; list-style: none; padding: 0; gap: 1rem; flex-wrap: wrap;">
+                <li style="padding: 0.5rem 1rem; background: #e0fbfc; color: #0a9396; border-radius: 20px; font-weight: 600;">HTML5 & CSS3</li>
+                <li style="padding: 0.5rem 1rem; background: #e0fbfc; color: #0a9396; border-radius: 20px; font-weight: 600;">JavaScript (ES6+)</li>
+                <li style="padding: 0.5rem 1rem; background: #e0fbfc; color: #0a9396; border-radius: 20px; font-weight: 600;">Blender 3D</li>
+                <li style="padding: 0.5rem 1rem; background: #e0fbfc; color: #0a9396; border-radius: 20px; font-weight: 600;">WebGL</li>
+            </ul>
+
+            <h2 style="color: #0a9396; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; margin-top: 2.5rem;">Connect</h2>
+            <p>Check out my work or get in touch:</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="https://cse-2274-rashdan.netlify.app/" class="btn-primary" style="text-decoration: none; display: inline-block;">Live Website Demo</a>
+                <a href="https://github.com/rsd24school-hub" class="btn-primary" style="text-decoration: none; display: inline-block; background-color: #333;">GitHub Profile</a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
 </body>
-
 </html>
