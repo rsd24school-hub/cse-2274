@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Create Account — Rashdan | Web Development</title>
+    <meta name="description" content="Create an account to join our community." />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header id="header"></header>
+    <script src="script.js"></script>
+    <div class="herocontact">
+        <div class="title">
+            <h1>Create Account</h1>
+            <p style="font-size:18px; margin:0.5rem 0 1rem;">Join our community today.</p>
+        </div>
+    </div>
+
+    <main>
+        <section style="max-width:760px; margin:1.5rem auto; text-align:left; padding:0 1.5rem;">
+            
+            <form id="createAccountForm" class="contact-form" novalidate>
+                <div class="form-row">
+                    <label for="username">Username</label>
+                    <input id="username" name="username" type="text" required placeholder="Choose a username">
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required placeholder="you@example.com">
+                </div>
+
+                <div class="form-row">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" required placeholder="Choose a secure password" pattern="(?=.*\d)(?=.*[!@#$%^&*]).{8,}">
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 0.25rem;">Must be at least 8 characters, with 1 number and 1 special character.</p>
+                </div>
+
+                <div class="form-row">
+                    <button type="submit" class="btn-primary">Create Account</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('createAccountForm');
+            const usernameInput = document.getElementById('username');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+
+            const validateUsername = () => {
+                const value = usernameInput.value.trim();
+                if (value.length === 0) {
+                    alert('Username is required.');
+                    return false;
+                }
+                if (value.length < 4) {
+                    alert('Username must be at least 4 characters long.');
+                    return false;
+                }
+                return true;
+            };
+
+            const validateEmail = () => {
+                const value = emailInput.value.trim();
+                if (value.length === 0) {
+                    alert('Email is required.');
+                    return false;
+                }
+                // Basic email regex
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(value)) {
+                    alert('Please enter a valid email address.');
+                    return false;
+                }
+                return true;
+            };
+
+            const validatePassword = () => {
+                const value = passwordInput.value;
+                if (value.length === 0) {
+                    alert('Password is required.');
+                    return false;
+                }
+                if (value.length < 8) {
+                    alert('Password must be at least 8 characters long.');
+                    return false;
+                }
+                if (!/\d/.test(value)) {
+                    alert('Password must include at least one number.');
+                    return false;
+                }
+                if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+                    alert('Password must include at least one special character.');
+                    return false;
+                }
+                return true;
+            };
+
+            // Blur event listeners
+            usernameInput.addEventListener('blur', () => {
+                 validateUsername();
+            });
+
+            emailInput.addEventListener('blur', () => {
+                validateEmail();
+            });
+
+            passwordInput.addEventListener('blur', () => {
+                validatePassword();
+            });
+
+            // Form submit listener
+            form.addEventListener('submit', (e) => {
+                // Run all validations
+                const isUsernameValid = validateUsername();
+                if (!isUsernameValid) {
+                    e.preventDefault();
+                    return; 
+                }
+                
+                const isEmailValid = validateEmail();
+                if (!isEmailValid) {
+                    e.preventDefault();
+                    return;
+                }
+
+                const isPasswordValid = validatePassword();
+                if (!isPasswordValid) {
+                     e.preventDefault();
+                     return;
+                }
+
+                // If all valid, allow submission (or prevent if this is just a demo)
+                // Assuming we want to allow "submission" if valid, but since there's no backend, it might just reload or go to the action URL.
+                // The task says "Prevent the form from submitting if there are errors."
+                // I'll assume if there are no errors, it can proceed (or I can prevent default and alert success for demo purposes, but the prompt didn't ask for that).
+                // I'll stick to preventing ON ERROR.
+            });
+        });
+    </script>
+</body>
+
+</html>
